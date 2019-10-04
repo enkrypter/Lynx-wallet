@@ -1,0 +1,22 @@
+# If you want Lynx to appear in a Linux app launcher ("start menu"), install this by doing:
+# sudo desktop-file-install lynx.desktop
+
+[Desktop Entry]
+Comment=Lynx Wallet
+Exec=sh -c "PATH=\"\\$HOME/.local/bin:\\$PATH\"; lynx %u"
+GenericName[en_US]=Lynx
+GenericName=Lynx
+Icon=lynx
+Name[en_US]=Lynx
+Name=Lynx
+Categories=Network;
+StartupNotify=true
+StartupWMClass=lynx
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/audax;
+Actions=Testnet;
+
+[Desktop Action Testnet]
+Exec=sh -c "PATH=\"\\$HOME/.local/bin:\\$PATH\"; lynx --testnet %u"
+Name=Testnet mode

@@ -3,7 +3,7 @@
 *.swp
 build/
 dist/
-zephyr_code/locale/
+lynx_code/locale/
 .devlocaltmp/
 *_trial_temp
 packages
@@ -19,5 +19,5 @@ bin/
 .pytest_cache/
 .coverage
 
-zephyr_data/
+lynx_data/
 *.egg-info/

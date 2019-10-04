@@ -17,7 +17,7 @@ _min_python_version_tuple = tuple(map(int, (MIN_PYTHON_VERSION.split("."))))
 
 
 if sys.version_info[:3] < _min_python_version_tuple:
-    sys.exit("Error: Zephyr requires Python version >= %s..." % MIN_PYTHON_VERSION)
+    sys.exit("Error: Lynx requires Python version >= %s..." % MIN_PYTHON_VERSION)
 
 with open('contrib/requirements/requirements.txt') as f:
     requirements = f.read().splitlines()
@@ -26,7 +26,7 @@ with open('contrib/requirements/requirements-hw.txt') as f:
     requirements_hw = f.read().splitlines()
 
 # load version.py; needlessly complicated alternative to "imp.load_source":
-version_spec = importlib.util.spec_from_file_location('version', 'zephyr_code/version.py')
+version_spec = importlib.util.spec_from_file_location('version', 'lynx_code/version.py')
 version_module = version = importlib.util.module_from_spec(version_spec)
 version_spec.loader.exec_module(version_module)
 
@@ -46,8 +46,8 @@ if platform.system() in ['Linux', 'FreeBSD', 'DragonFly']:
         else:
             usr_share = os.path.expanduser('~/.local/share')
     data_files += [
-        (os.path.join(usr_share, 'applications/'), ['zephyr.desktop']),
-        (os.path.join(usr_share, icons_dirname), ['zephyr_code/gui/icons/zephyr.png']),
+        (os.path.join(usr_share, 'applications/'), ['lynx.desktop']),
+        (os.path.join(usr_share, icons_dirname), ['lynx_code/gui/icons/lynx.png']),
     ]
 
 extras_require = {
@@ -59,38 +59,38 @@ extras_require['full'] = [pkg for sublist in list(extras_require.values()) for p
 
 
 setup(
-    name="Zephyr",
+    name="Lynx",
     version=version.ELECTRUM_VERSION,
     python_requires='>={}'.format(MIN_PYTHON_VERSION),
     install_requires=requirements,
     extras_require=extras_require,
     packages=[
-        'zephyr_code',
-        'zephyr_code.gui',
-        'zephyr_code.gui.qt',
-        'zephyr_code.plugins',
-    ] + [('zephyr_code.plugins.'+pkg) for pkg in find_packages('zephyr_code/plugins')],
+        'lynx_code',
+        'lynx_code.gui',
+        'lynx_code.gui.qt',
+        'lynx_code.plugins',
+    ] + [('lynx_code.plugins.'+pkg) for pkg in find_packages('lynx_code/plugins')],
     package_dir={
-        'zephyr': 'zephyr'
+        'lynx': 'lynx'
     },
     package_data={
         '': ['*.txt', '*.json', '*.ttf', '*.otf'],
-        'zephyr_code': [
+        'lynx_code': [
             'wordlist/*.txt',
             'locale/*/LC_MESSAGES/electrum.mo',
         ],
-        'zephyr_code.gui': [
+        'lynx_code.gui': [
             'icons/*.*',
             'icons/radio/*.*',
             'icons/checkbox/*.*',
         ],
     },
-    scripts=['zephyr_code/zephyr'],
+    scripts=['lynx_code/lynx'],
     data_files=data_files,
-    description="Lightweight PIVX Wallet",
+    description="Lightweight AUDAX Wallet",
     maintainer="Cryptosi",
     maintainer_email="cryptosi@protonmail.com",
     license="MIT License",
-    url="https://github.com/mrcarlanthony/Zephyr-wallet",
-    long_description="""Lightweight PIVX Wallet""",
+    url="https://github.com/enkrypter/Lynx-wallet",
+    long_description="""Lightweight AUDAX Wallet""",
 )

@@ -19,20 +19,20 @@ except ImportError as e:
     sys.exit(1)
 
 try:
-    imp.load_module('zephyr', *imp.find_module('../zephyr'))
-    from zephyr import constants, keystore, storage, SimpleConfig
-    from zephyr.version import ELECTRUM_VERSION
-    from zephyr.gui.qt import update_checker
-    from zephyr.plugin import Plugins
-    from zephyr.storage import WalletStorage
-    from zephyr.util import InvalidPassword
-    from zephyr.wallet import Wallet
+    imp.load_module('lynx', *imp.find_module('../lynx'))
+    from lynx import constants, keystore, storage, SimpleConfig
+    from lynx.version import ELECTRUM_VERSION
+    from lynx.gui.qt import update_checker
+    from lynx.plugin import Plugins
+    from lynx.storage import WalletStorage
+    from lynx.util import InvalidPassword
+    from lynx.wallet import Wallet
 except ImportError as e:
     print('Import error:', e)
 
 
 HOME_DIR = os.path.expanduser('~')
-CONFIG_NAME = '.update-last-version-zephyr'
+CONFIG_NAME = '.update-last-version-lynx'
 SIGNING_KEYS = update_checker.UpdateCheck.VERSION_ANNOUNCEMENT_SIGNING_KEYS
 LATEST_VER_FNAME = '.latest-version'
 COMMIT_MSG_TEMPLATE = 'set {fname} to {version}'

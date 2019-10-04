@@ -1,15 +1,15 @@
 include LICENCE RELEASE-NOTES AUTHORS
 include README.rst
-include zephyr.desktop
+include lynx.desktop
 include *.py
-include zephyr
+include lynx
 include contrib/requirements/requirements.txt
 include contrib/requirements/requirements-hw.txt
 recursive-include packages *.py
 recursive-include packages cacert.pem
 
-graft zephyr_code
-prune zephyr_code/tests
+graft lynx_code
+prune lynx_code/tests
 
 global-exclude __pycache__
 global-exclude *.py[co~]

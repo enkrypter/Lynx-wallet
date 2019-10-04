@@ -1,4 +1,4 @@
-# Using Zephyr with Tor Proxy
+# Using Lynx with Tor Proxy
 
 ## Use Tor Proxy on startup
 
