@@ -74,6 +74,7 @@ class BitcoinMainnet(AbstractNet):
         'p2wsh':       0x02aa7ed3,  # Zpub
     }
     BIP44_COIN_TYPE = 329
+	POS_BLOCK = 481
 
 
 class BitcoinTestnet(AbstractNet):
