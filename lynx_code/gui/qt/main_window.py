@@ -2946,7 +2946,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, Logger):
         id_widgets.append((SSL_id_label, SSL_id_e))
 
         units = base_units_list
-         msg = (_('Base unit of your wallet.')
+        msg = (_('Base unit of your wallet.')
                + '\n1 AUDAX = 1000 mAUDAX. 1 mAUDAX = 1000 bits. 1 bits = 100 sats.\n'
                + _('This setting affects the Send tab, and all balance related fields.'))
         unit_label = HelpLabel(_('Base unit') + ':', msg)
