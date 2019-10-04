@@ -75,7 +75,7 @@ class BitcoinMainnet(AbstractNet):
     }
     BIP44_COIN_TYPE = 329
 	
-	POS_BLOCK = 481
+    POS_BLOCK = 481
 
 
 class BitcoinTestnet(AbstractNet):
