@@ -49,7 +49,7 @@ class AbstractNet:
 class BitcoinMainnet(AbstractNet):
 
     TESTNET = False
-    WIF_PREFIX = 8e
+    WIF_PREFIX = 212
     ADDRTYPE_P2PKH = 23
     ADDRTYPE_P2SH = 8
     ADDRTYPE_P2SH_ALT = 8
